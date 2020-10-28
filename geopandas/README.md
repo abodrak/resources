@@ -36,8 +36,8 @@ data.plot()
 
 #### for creating geodata frame from pandas df , the original pandas dataframe must have latitude and longituide columns . 
 <br>
-step 1 , <br>
-
+  <br>
+step 1
 -  import the nessesary libraries 
 
 ```python
@@ -46,8 +46,8 @@ from shapely.geometry import Point
 import geopandas as gpd
 ```
 
-
-- We create a Points assoicated with 2 longitude latitude data from pandas dataframe by using simple lambda function 
+step 2
+- We create a Points assoicated with 2 longitude latitude cloumns from pandas dataframe by using simple lambda function , important thing to remember : **longitude** comes first when we reference colomns in lambda 
 
 
 
@@ -55,5 +55,20 @@ import geopandas as gpd
 ```python 
      points = count.apply(lambda row : Point(row. usa_state_longitude,row.usa_state_latitude),axis=1)
 ```
+step 3
+- We create a new **GeoDataframe** and assoicate the points to it and Points format <span style="font-weight: bold">(Geo Coordinate Format)
+</span> by assining  `{'init':'epsg:4326'}` to crs field .
 
+```python
+g_df = gpd.GeoDataFrame(count,geometry=points)
+g_df.crs = {'init': 'epsg:4326'}
+g_df.head()
+```
 
+step 4
+- we can now plot the geo dataframe we created 
+
+```python
+g_df.head()
+```
+<br>
