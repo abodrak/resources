@@ -21,7 +21,7 @@ data.head()
 data.plot()
 ```
 
-### we can some built in pandas functions in geopandas 
+### we can use built in pandas functions in geopandas 
 
 #### for example we can these functions in geopandas , for example :- 
 
@@ -31,6 +31,9 @@ data.plot()
 <br>
 <br>
 
+---
+<br>
+
 ### Creating Geodataframe from pandas dataframe 
 <br>
 
@@ -38,7 +41,8 @@ data.plot()
 <br>
   <br>
 step 1 <br>
--  import the nessesary libraries 
+
+- import the nessesary libraries 
 
 ```python
 import pandas as pd
